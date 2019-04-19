@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# Standard paranoia.
+set -eu
+
 BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
 BUILD_DIR=$1
 ENV_DIR=$2
 
 cd $BUILD_DIR
-
+echo "----Initializing tests"
 cargo test --release --all
