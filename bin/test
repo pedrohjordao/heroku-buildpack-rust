@@ -1,8 +1,4 @@
-#!/usr/bin/env bash
-# bin/test <build-dir> <env-dir> <artifact-dir>
-
-# fail fast
-set -e
+#!/bin/bash
 
 BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
 BUILD_DIR=$1
@@ -10,4 +6,4 @@ ENV_DIR=$2
 
 cd $BUILD_DIR
 
-cargo test --all
+cargo test --release --all
